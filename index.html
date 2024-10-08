@@ -1,10 +1,189 @@
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My page</title>
+  <title>Hunhee's Portfolio</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  <link rel="stylesheet" href="css/index-style.css">
+  <link rel="icon" href="img/logo.png">
+
+  <!-- script -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/index-script.js"></script>
+  <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+
+  <!-- pulgin -->
+  <script src="js/splitting.min.js"></script>
+  <script src="js/scrolla.jquery.min.js"></script>
+
 </head>
 <body>
-  <p>Hello, World!</p>
+  <div class="wrap">
+
+    <!-- header -->
+    <header>
+      <div class="innerHeader">
+        <h1 class="logo"><a href="index.html"><img src="img/logo.png" alt="로고"></a></h1>
+        <a href="#" class="menu en">MENU</a>
+      </div>
+
+      <!-- menuOpen -->
+      <div class="menuOpen">
+        <a href="#" class="close"><span class="lnr lnr-cross"></span></a>
+        <ul class="en">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a>
+              <a class="sub" href="ncs.html">- NCS</a>
+          </li>
+          <li>
+            <a href="gallery.html">GALLERY</a></li>
+          <li><a href="portfolio.html">PORTFOLIO PROCESS</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- section.visual -->
+    <aticle class="visual">
+      <div><img src="img/pic0.png" alt=""></div>
+    </aticle>
+    <div data-splitting class="en_b up animate" data-animate="motion">Let's make our story</div>
+    <div data-splitting class="en_b down animate" data-animate="motion">Let's make our story</div>
+
+
+    <!-- section.text 1 -->
+    <section class="txet 1">
+      <div class="txtBox animate" data-animate="motion">
+        <div data-splitting class="en">Get a good idea and stay with it. Dog it, <br>
+          and stay it until it's done right.</div>
+        <div data-splitting class="ko">좋은 아이디어가 떠오르면 끈질기게 노력하세요. 잘 될 때까지 계속해서 끈질기게 노력하세요.</div>
+        <div data-splitting class="en_s">- Walt Disney -</div>
+      </div>
+    </section>
+
+    <!-- section.about -->
+    <section class="about">
+      <div class="left ">
+        <p class="img animate" data-animate="motion"><img src="img/index about.png" alt="이미지"></p>
+      </div>
+      <div class="right">
+        <div class="txtBox animate" data-animate="motion">
+          <h2 class="tit en_b ">
+            <span><b>Hello,</b></span>
+            <span><b>I'm web publisher.</b>
+          </h2>
+          <p class="ko ">실패하는것을  두려워하지 않고, <br>
+            언제나 도전하는것을 즐기며,<br>
+            사람들과 함께 성장해나아가는것을 좋아하는<br>
+            신입 웹 퍼블리셔 이훈희입니다.</p>
+            <div class="btn about en"><a href="about.html">ABOUT <span class="lnr lnr-cross"></span></a></div>
+        </div>
+        <div class="marquee">
+          <div class="inner">
+            <p class="en"><span>Web Design</span><span>UI/UX</span><span>Web Publisher</span><span>UI/UX</span><span>Web Design</span><span>UI/UX</span><span>Web Publisher</span><span>UI/UX</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section.text 2 -->
+    <section class="txet 2">
+      <div class="txtBox animate" data-animate="motion">
+        <div data-splitting class="en">Only those who dare to fail greatly <br>
+          can ever achieve greatly.</div>
+        <div data-splitting class="ko">크게 실패할 용기가 있는 자만이 크게 성취할 수 있다.</div>
+        <div data-splitting class="en_s">-John F. Kenneady -</div>
+      </div>
+    </section>
+
+    <!-- section.gallery -->
+    <section class="gallery">
+        <div class="txt animate" data-animate="motion">
+          <h2 class="en_b" >GALLERY</h2>
+          <p class="ko">최근까지 작업한 클론코딩과 그래픽 디자인 작업물</p>
+        </div>
+
+        <!-- gallery-coding -->
+        <h2 class="en_b tit animate" data-animate="motion">Coding</h2>
+        <ul>
+          <li>
+            <div class="coding imgRight">
+              <a href="./dopda/dopda.html">
+                <p class="img"><img src="img/index-gallery img1.png" alt="이미지"></p>
+                <p class="en animate" data-animate="motion">DOPDA <br> <span>Global Concierge</span></p>
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <div class="coding imgLeft">
+              <a href="./daebang/daebang.html">
+                <p class="img"><img src="img/index-gallery img2.png" alt="이미지"></p>
+                <p class="en animate" data-animate="motion">DEABANG <br> <span>Daebang Construction</span></p>
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <div class="coding imgRight">
+              <a href="./hanwha/hanwha.html">
+                <p class="img"><img src="img/index-gallery img3.png" alt="이미지"></p>
+                <p class="en animate" data-animate="motion">HANWAH <br> <span>Hanwah Chemical</span></p>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <div class="btn more en animate" data-animate="motion"><a href="gallery.html">MORE <span class="lnr lnr-cross"></span></a></div>
+
+        <!-- gallery-design -->
+        <div class="galleryDesign">
+          <h2 class="en_b tit animate" data-animate="motion">Graphic Design</h2>
+            <a href="gallery.html"><p class="img design left animate" data-animate="motion"><img src="img/index-design1.png" alt="이미지"></p></a>
+            <a href="gallery.html"><p class="img design right animate" data-animate="motion"><img src="img/index-design2.png" alt="이미지"></p></a>
+          <div class="btn more en animate" data-animate="motion"><a href="gallery.html">MORE <span class="lnr lnr-cross"></span></a></div>
+      </div>
+      </section>
+
+    <!-- section.portfolio -->
+    <section class="portfolio">
+      <p class="img animate" data-animate="motion"><img src="img/index-portfolio.png" alt="이미지"></p>
+      <div class="txtBox animate" data-animate="motion">
+        <h2 class="en_b ">PORTFOLIO <br>Process</h2>
+        <p class="ko">지난 6개월간 수강하며 배운 내용을 바탕으로 제작한 포트폴리오 과정</p>
+        <div class="btn more en"><a href="portfolio.html">MORE <span class="lnr lnr-cross"></span></a></div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <!-- contact -->
+      <div class="contact">
+        <div class="left">
+          <p class="en">CONTACT</p>
+          <div class="mail">
+              <a href="mailto:gndnsldl@naver.com"><p class="en mail">gndnsldl@naver.com</p></a>
+              <p class="img animate" data-animate="motion"><img src="img/contact 1.png" alt=""></p>
+          </div>
+        </div>
+      </div>
+      <!-- info -->
+      <div class="info">
+        <div class="right">
+          <div class="txtBox">
+            <h1 class="logo"><a href="index.html"><img src="img/logo.png" alt="이미지"></a></h1>
+            <p class="name ko">이훈희 <br> <span class="en">Lee Hunhee</span></p>
+            <p class="tel en">Tel <br>010-6322-1806</p>
+            <div class="btn en"><a href="mailto:gndnsldl@naver.com">CONTACT <span class="lnr lnr-cross"></span></a></div>
+          </div>
+          <p class="copy en">ⓒ2022. Lee Hunhee All right reserved.</p>
+          <p class="txt en">This page is optimized for Google Chrome. <br>This site is optimized for 1920*1080 resolution.</p>
+        </div>
+      </div>
+      <a href="#" class="goTop en">TOP</a>
+    </footer>
+  </div>
 </body>
 </html>

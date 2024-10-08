@@ -1,0 +1,319 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@300;400&family=Playfair+Display:wght@400;700;900&display=swap');
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+/* layout */
+body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #2e2e2e;}
+.ko {font-family: 'Noto Sans KR', sans-serif;}
+.en {font-family: 'Playfair Display', serif; font-weight: normal;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.en_b {font-family: 'DM Serif Display', serif; font-weight: normal;}
+
+/* header -------------------------------------------------------------------------- */
+header {width: 100%;  position: fixed; z-index: 100;}
+header .innerHeader {max-width: 1800px; padding: 30px 20px; margin: 0 auto; overflow: hidden;}
+header .innerHeader h1.logo {float: left; width: 100px; }
+header .innerHeader h1.logo a {display: block; width: 100%; height: 100%;}
+header .innerHeader h1.logo img {width: 100%; }
+header .innerHeader h1.logo img img {width: 100%;}
+header .innerHeader a.menu {float: right; font-size: 26px; transition: all 0.4s;}
+header .innerHeader a.menu:hover,header .innerHeader a.menu:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s; }
+header .innerHeader a.menu::after {content: ''; width: 0%; height: 1px; background: #d4c8be; position: absolute; bottom: -5px; left: 0; transition: all 0.3s;}
+header .innerHeader a.menu:hover::after,header .innerHeader a.menu:focus::after {width: 100%; }
+
+
+/* menuOpen ----------------------------------------------------------------------------------------------------------------------------------------- */
+.menuOpen {background: #947C6B; display: block; width: 700px; position: absolute; top: 0; right: -100%; color: #eee; height: 100vh; font-size: 30px; text-align: center; padding: 30px; box-sizing: border-box; float: right;  z-index: 200; transition: all 0.8s;} 
+.menuOpen a.close {display: block; font-size: 35px; color: #eee; float: right; margin-right: 20px; transition: all ease 0.3s;}
+.menuOpen a.close:hover,.menuOpen a.close:focus {transform: rotate(181deg); transition: all ease 0.3s; color: #d4c8be }
+.menuOpen ul {margin-top: 170px;}
+.menuOpen ul li a {display: inline-block; margin-bottom: 130px; transition: all 0.3s;}
+.menuOpen ul li a.sub {font-size: 20px; display: block; width: 9%; padding: 0; margin-top: -120px; margin-left: 270px;}
+.menuOpen ul li a:hover,.menuOpen ul li a:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s;}
+.menuOpen ul li a::after {content: ''; width: 0%; height: 1px; background: #d4c8be; position: absolute; bottom: -5px; left: 0; transition: all 0.3s;}
+.menuOpen ul li a:hover::after,.menuOpen ul li a:focus::after {width: 100%;}
+.menuOpen.on {right: 0; transition: all 0.8s;}
+
+
+/* section.visual ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.visual {background: #B09582; max-width: 100%; overflow: hidden; position: relative;}
+section.visual .img {width: 100%; margin: 171px 25%; position: relative;}
+section.visual .img p.video {position: absolute; left: 256px; top: 90px; width: 491.8px; height: 278px;}
+section.visual .img p.video img {width: 100%; height: 100%;}
+section.visual .txt {position: absolute; left: 205px; top: 310px; }
+section.visual span.txt  { transform:  translate3d(0,0,0) skewY(0deg); overflow: hidden;}
+section.visual .txt span.en_b {font-size: 130px; }
+section.visual .txt span.en {font-size: 20px;}
+section.visual .txt.motion span.en_b b {overflow: hidden; font-weight: normal; display: block; animation-name: textAni; animation-duration: 0.5s}
+section.visual .txt.motion span.en b {overflow: hidden; font-weight: normal; display: block; animation-name: textAni; animation-duration: 0.8s}
+@keyframes textAni {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform:  translate3d(0, 40px,0) skewY(8deg);  transform-origin: top left;}
+}
+
+/* section.process ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.process {width: 100%; overflow: hidden;}
+section.process .inner{width: 1470px; margin: 245px auto ; position: relative;}
+section.process .svg {fill: none; stroke: #2e2e2e; width: 615px; background: #F5F1ED;}
+section.process .svg:before {z-index: -1; content: ''; width: 615px; height: 430px;  background: #B7AAA1;  position: absolute; transform: rotate(8deg);}
+section.process .svg .txt {fill: #2e2e2e; stroke: none;}
+section.process .txtBox {float: right; position: absolute; top: 0; right: 0;}
+section.process .txtBox .en {font-size: 65px; margin-bottom: 30px;}
+.inner.motion .st0.a {stroke-dasharray: 600; stroke-dashoffset: 600; animation: dash 0.8s linear forwards; }
+.inner.motion .st0.b {stroke-dasharray: 600; stroke-dashoffset: 600; animation: dash 0.7s linear forwards; }
+.inner.motion .st0.c {stroke-dasharray: 600; stroke-dashoffset: 600; animation: dash 4s linear forwards; }
+.inner.motion .st0.d {stroke-dasharray: 600; stroke-dashoffset: 600; animation: dash 6s linear forwards; }
+.inner.motion .st0.e {stroke-dasharray: 600; stroke-dashoffset: 600; animation: dash 6s linear forwards; }
+.inner.motion .st0 {stroke-dasharray: 600; stroke-dashoffset: 600; animation: dash 1.5s linear forwards; }
+.inner.motion .st1 {stroke-dasharray: 400; stroke-dashoffset: 400; animation: dash 1s linear forwards; }
+.inner.motion .st2 {stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: dash 3s linear forwards; }
+.inner.motion .st1.a {stroke-dasharray: 400; stroke-dashoffset: 400; animation: dash 6s linear forwards; }
+.inner.motion .st1.b {stroke-dasharray: 400; stroke-dashoffset: 400; animation: dash 3s linear forwards; }
+.inner.motion .st1.c {stroke-dasharray: 400; stroke-dashoffset: 400; animation: dash 4s linear forwards; }
+.inner.motion .st1.d {stroke-dasharray: 400; stroke-dashoffset: 400; animation: dash 3.5s linear forwards; }
+.inner.motion .st1.e {stroke-dasharray: 400; stroke-dashoffset: 400; animation: dash 3s linear forwards; }
+@keyframes dash {
+  form {stroke-dashoffset: 1400; }
+  to {stroke-dashoffset: 0;}
+} 
+section.process .txtBox.motion .tit.en {animation: slide-up 0.5s;}
+section.process .txtBox.motion .text.ko {animation: slide-up 0.7s;}
+
+
+/* section.map ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.map {width: 100%; overflow: hidden; background: #F5F1ED; padding: 150px 0 275px 0;}
+section.map .inner {width: 1470px; margin: 0 auto; overflow: hidden;}
+section.map .inner .txtBox {display: inline-block; width: 100%;}
+section.map .inner .txtBox .en {font-size: 65px; margin-bottom: 30px;}
+section.map .inner .txtBox .ko {margin-bottom: 90px;}
+section.map .inner .txtBox .left {float: left; }
+section.map .inner .txtBox .right {float: right; }
+section.map .inner p.img.left {float: left; }
+section.map .inner p.img.right {float: right;  }
+section.map .inner.motion .txtBox .left .tit.en {animation: slide-l 0.5s;}
+section.map .inner.motion .txtBox .left .text.ko {animation: slide-l 0.7s;}
+section.map .inner.motion p.img.left {animation: slide-l 0.9s ;}
+@keyframes slide-l {
+  0%{transform: translateX(-200px); opacity: 0;}
+  30%{transform: translateX(-200px); opacity: 0;}
+}
+section.map .inner.motion .txtBox .right .en {animation: slide-r 0.5s;}
+section.map .inner.motion .txtBox .right .ko {animation: slide-r 0.7s;}
+section.map .inner.motion p.img.right {animation: slide-r 0.9s ;}
+@keyframes slide-r {
+  0%{transform: translateX(200px); opacity: 0;}
+  30%{transform: translateX(200px); opacity: 0;}
+}
+
+
+/* section.sketch ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.sketch {width: 100%; margin-top: 280px;}
+section.sketch .txtBox {width: 1470px; margin: 0 auto;}
+section.sketch .txtBox .en {font-size: 65px; margin-bottom: 30px;}
+section.sketch .txtBox .ko {margin-bottom: 115px;}
+section.sketch .bg { background: url(/img/portfolio-sketch.png) no-repeat ; background-position: center; background-size: cover; background-attachment: fixed; height: 600px; }
+section.sketch .txtBox.motion .en .char {display: inline-block; animation: slide-up2  0.3s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(18ms * var(--char-index));}
+section.sketch .txtBox.motion .ko .char {display: inline-block; animation: slide-up2  0.2s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(9ms * var(--char-index));}
+@keyframes slide-up2 {
+    0%{transform: translateY(100px); opacity: 0;}
+    30%{transform: translateY(20px); opacity: 0;}
+}
+
+
+/* section.wireframe ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.wireframe {width: 100%; margin-top: 380px;}
+section.wireframe .inner {width: 1470px;  margin: 0 auto; overflow: hidden; }
+section.wireframe .en {font-size: 65px; margin-bottom: 30px;}
+section.wireframe .ko {margin-bottom: 106px;}
+section.wireframe ul {float: left; margin-left: 22px; margin-bottom: 20px;}
+section.wireframe ul li {float: left; box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.20); margin-right: 75px;}
+section.wireframe ul li:nth-child(4) {margin-right: 0;}
+section.wireframe .txtBox.motion .en .char {display: inline-block; animation: slide-up2  0.3s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(18ms * var(--char-index));}
+section.wireframe .txtBox.motion .ko .char {display: inline-block; animation: slide-up2  0.2s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(9ms * var(--char-index));}
+
+section.wireframe ul.motion li:nth-child(1) {animation: slide-up 0.6s;}
+section.wireframe ul.motion li:nth-child(2) {animation: slide-up 0.3s;}
+section.wireframe ul.motion li:nth-child(3) {animation: slide-up 0.5s;}
+section.wireframe ul.motion li:nth-child(4) {animation: slide-up 0.8s;}
+@keyframes slide-up {
+  0% {opacity: 0; transform: translateY(200px);}
+}
+
+
+/* section.info ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.info {width: 100%; margin: 300px 0;}
+section.info .inner {width: 1470px; margin: 0 auto; }
+section.info .en {font-size: 65px; margin-bottom: 30px;}
+section.info .ko {margin-bottom: 130px;}
+section.info p.img.motion {width: 100%; animation-name: slide-r; animation-duration: 0.7s; }
+section.info .txtBox.motion .en .char {display: inline-block; animation: slide-up2  0.3s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(18ms * var(--char-index));}
+section.info .txtBox.motion .ko .char {display: inline-block; animation: slide-up2  0.2s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(9ms * var(--char-index));}
+
+
+/* section.chart ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.chart {width: 100%; background: #E8E8E8; padding: 200px 0 100px;}
+section.chart .inner {margin: 0 auto; width: 1470px;}
+section.chart .en {font-size: 65px; margin-bottom: 30px; }
+section.chart .ko {margin-bottom: 130px;}
+section.chart p.img {width: 100%;}
+section.chart .txtBox.motion .en .char {display: inline-block; animation: slide-up2  0.3s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(18ms * var(--char-index));}
+section.chart .txtBox.motion .ko .char {display: inline-block; animation: slide-up2  0.2s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(9ms * var(--char-index));}
+section.chart p.img.motion {width: 100%; animation-name: slide-l; animation-duration: 0.7s; }
+
+
+/* section.style guide ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.style {width: 100%; margin-top: 300px; overflow: hidden;}
+section.style .tit.en_b {font-size: 300px; color: #eee; width: 100%; text-align: right; margin: 0 80px 78px 0; float: right; }
+section.style .tit.en_b.motion {animation: slide-r 0.7s; }
+section.style .inner {width: 1470px; margin: 0 auto; overflow: hidden;}
+section.style .inner .txtBox1 {float: right; text-align: right;  width: 100%;}
+section.style .inner .txtBox1 .tit.en {font-size: 65px; margin-bottom: 60px;  display: block;}
+section.style .inner .txtBox1 .txt.ko {display: inline-block;}
+section.style .inner .txtBox1.motion .tit.en {animation: slide-up 0.5s;}
+section.style .inner .txtBox1.motion .txt.ko {animation: slide-up 0.7s;}
+
+
+/* color */
+section.style .inner .color {width: 100%; float: left; margin-top: 170px; display: inline-block;}
+section.style .inner .color .palette.en {font-size: 40px; width: 328px;  display: inline-block; border-bottom: 1px solid #2e2e2e; padding-bottom: 16px;}
+section.style .inner .color .palette.en span {font-size: 60px; font-weight: bold;}
+section.style .inner .color .palette.en.motion {animation: slide-l 0.7s;}
+
+section.style .inner .color ul {position: relative; overflow: hidden; margin-top: 150px;}
+section.style .inner .color ul li {float: left; overflow: hidden;  margin-bottom: 100px;}
+section.style .inner .color ul li span.bg.a {background: #2e2e2e; width: 216px; height: 100px; display: block;}
+section.style .inner .color ul li span.bg.b {background: #EDE7E3; width: 216px; height: 100px; display: block;}
+section.style .inner .color ul li span.bg.c {background: #F5F1ED; width: 216px; height: 100px; display: block;}
+section.style .inner .color ul li span.bg.d {background: #B09582; width: 216px; height: 100px; display: block;}
+
+section.style .inner .color ul li p.txt {font-size: 30px;  margin-right: 296.5px;}
+section.style .inner .color ul li:last-child p.txt {margin-right: 0px;}
+
+section.style .inner .color ul.motion li:nth-child(1) {animation: up 0.5s;}
+section.style .inner .color ul.motion li:nth-child(2) {animation: up 0.7s;}
+section.style .inner .color ul.motion li:nth-child(3) {animation: up 0.9s;}
+section.style .inner .color ul.motion li:nth-child(4) {animation: up 1s;}
+@keyframes up {
+  0% {opacity: 0; transform: translateY(0%);}
+  50% {opacity: 50%; transform: translateY(30%);}
+  100% {opacity: 100%; transform: translateY(0%);}
+}
+
+
+/* typo */
+section.style .inner .typo {width: 100%; display: inline-block; margin-top: 170px;}
+section.style .inner .typo .title.en {float: right; text-align: right; font-size: 40px; width: 328px; display: inline-block; border-bottom: 1px solid #2e2e2e; padding-bottom: 16px;}
+section.style .inner .typo .title.en span {font-size: 60px; font-weight: bold;}
+section.style .inner .typo .title.en.motion {animation: slide-r 0.7s;}
+
+section.style .inner .typo .txtBox2 {width: 1120px;  margin: 191px auto; overflow: hidden; position: relative;} 
+section.style .inner .typo .txtBox2 ul.left {float: left; border-right: 1px solid #2e2e2e; padding: 43px 60px; }
+section.style .inner .typo .txtBox2 ul.left li:nth-child(1) {margin-bottom: 157px;}
+section.style .inner .typo .txtBox2 ul.right {float: left; margin-left: 90px; }
+section.style .inner .typo .txtBox2 ul.right li.name {font-size: 50px; margin-bottom: 100px;  }
+section.style .inner .typo .txtBox2 ul.right li.name span.en {font-size: 30px; text-align: right; position: absolute; right: 0;}
+section.style .inner .typo .txtBox2 ul.right li.ko {font-size: 50px;}
+section.style .inner .typo .txtBox2 ul.right li.ko span {font-size: 30px; position: absolute; bottom: 35px; right: 0;}
+section.style .inner .typo .txtBox2 ul.right.motion li.name {animation: opacity 0.7s;}
+section.style .inner .typo .txtBox2 ul.right.motion li.ko {animation: opacity 0.9s;}
+@keyframes opacity {
+  0% {opacity: 0;}
+  36% {opacity: 0;}
+}
+section.style .inner .typo .txtBox2 ul.left.motion li:nth-child(1) {animation-name: txt1; animation-duration: 0.5s;}
+section.style .inner .typo .txtBox2 ul.left.motion li:nth-child(2) {animation-name: txt1; animation-duration: 0.9s;}
+@keyframes txt1 {
+	0% {opacity: 0; transform: rotateX(100deg) translateY(-100px);}
+    20% {opacity: 0; transform: rotateX(100deg) translateY(-100px);}
+	100% {opacity: 1; transform: rotateX(0) translateY(0);}
+}
+
+
+
+/* section.logo ----------------------------------------------------------------------------------------------------------------------------------------- */
+section.logo {width: 100%; overflow: hidden; margin-bottom: 225px;}
+section.logo .tit.en_b {font-size: 300px; color: #eee; width: 100%; text-align: left; margin: 130px 0 145px 80px;}
+section.logo .inner {width: 1470px; margin: 0 auto; overflow: hidden; }
+section.logo .inner p.img.left {display: inline; overflow: hidden; }
+section.logo .inner .right {width: 849px; float: right; }
+section.logo .inner .right .txtBox {float: left; display: inline-block;  margin-bottom: 200px; }
+section.logo .inner .right .txtBox p.en {font-size: 30px; width: 116px; padding-bottom: 16px; border-bottom: 1px solid #2e2e2e;}
+section.logo .inner .right .txtBox .ko {margin-top: 26px;}
+section.logo .inner .right .typoDesign p.ko {float: left; display: inline-block; margin-bottom: 25px;}
+section.logo .inner .right .typoDesign ul.design {float: left; width: 100%; }
+section.logo .inner .right .typoDesign ul.design li {float: left; margin-right: 97px;}
+section.logo .inner .right .typoDesign ul.design li:nth-child(1) img {width: 100%;}
+section.logo .inner .right .typoDesign ul.design li:nth-child(2) img {width: 100%;}
+section.logo .tit.en_b.motion {animation: slide-l 0.7s; }
+section.logo .inner.motion p.img.left img {animation: slide-l 0.9s; }
+section.logo .inner.motion .right .txtBox p.en {animation: up 0.5s; }
+section.logo .inner.motion .right .txtBox .ko {animation: up 0.8s; }
+section.logo .inner.motion .right .typoDesign p.ko {animation-name: txt1; animation-duration: 0.5s;}
+section.logo .inner.motion .right .typoDesign ul.design li:nth-child(1) img {animation: scale 0.5s;}
+section.logo .inner.motion .right .typoDesign ul.design li:nth-child(2) img {animation: scale 0.7s;}
+@keyframes scale {
+  0% {opacity: 0; transform: scale(1.1);}
+}
+
+
+/* footer ------------------------------------------------------------------------------------ */
+/* contact */
+footer {width: 100%; overflow: hidden; }
+footer .contact {width: 50%; float: left; background: #B09582; overflow: hidden; position: relative; height: 962px;}
+footer .contact .left {width: 478px; margin: 0 auto; }
+footer .contact .left p.en {color: #eee; font-size: 20px; letter-spacing: 1px; text-align: center; margin-top: 150px; z-index: 1;}
+footer .contact .left .mail {margin-top: 150px;}
+footer .contact .left .mail p.img {display: block; margin: 0 20%; transform: rotate(8deg); transition: all 0.2s; z-index: -1;} 
+footer .contact .left .mail p.en.mail {font-size: 50px; font-weight: normal; position: absolute; bottom: 43%;}
+
+footer .contact .left .mail p.en.mail::after {content: ''; width: 0%; height: 1px; background: #eee; position: absolute; bottom:-5px; left: 0px; transition: all 0.2s;}
+
+footer .contact .left .mail p.en.mail:hover::after {width: 100%; transition: all 0.2s; }
+footer .contact .left .mail a:hover + p.img{transform: rotate(0deg); transition: all 0.2s;}
+footer .contact .left .mail p.img.motion {animation-name: pop-up; animation-duration: 0.8s;}
+@keyframes pop-up {
+  0%{transform: scale(0.5); opacity: 0;}
+  30%{transform: scale(1.2); opacity: 1;}
+}
+
+/* info ------------------------------------------------------------------------------------ */
+footer .info  {width: 50%; float: right; background: #EDE7E3; height: 962px; }
+footer .info .right {width: 100%; }
+footer .info .right .txtBox {width: 689px; margin: 0 auto; border-bottom: 1px solid #2e2e2e; padding-bottom: 50px;}
+
+footer .info .right h1.logo {width: 100px; margin-top: 176px; margin-bottom: 100px;}
+footer .info .right h1.logo a {display: block; width: 100%; height: 100%;}
+footer .info .right h1.logo img {width: 100%;}
+footer .info .right h1.logo img img {width: 100%;}
+
+footer .info .right p.ko {font-size: 25px; margin-bottom: 35px;}
+footer .info .right p.ko span.en {font-size: 18px;}
+footer .info .right p.tel {margin-bottom: 40px; font-size: 18px;}
+
+footer .info .right .txtBox .btn.en {font-size: 30px; text-align: right;}
+footer .info .right .txtBox .btn.en a {display: inline-block; transition: all 0.3s; }
+footer .info .right .txtBox .btn.en span {margin-left: 5px; font-size: 26px; transition: all 0.3s; display: inline-block; transform: rotate(45deg);}
+footer .info .right .txtBox .btn.en a:hover span,footer .info .right .txtBox .btn.en a:focus span {transform: rotate(226deg); display: inline-block; transition: all ease 0.3s; color: #777 }
+footer .info .right .txtBox .btn.en a:hover,footer .info .right .txtBox .btn.en a:focus {transform: translateX(0px); color: #777; transition: all 0.3s;}
+footer .info .right .txtBox .btn.en a::after {content: ''; width: 0%; height: 1px; background: #777; position: absolute; bottom:0px; left: 0px; transition: all 0.3s;}
+footer .info .right .txtBox .btn.en a:hover::after,footer .info .right .txtBox .btn.en a:focus::after {width: 100%; transition: all 0.3s;}
+
+footer .info .right p.copy {font-size: 18px; margin-top: 200px; text-align: center;}
+footer .info .right p.txt {font-size: 14px; text-align: center; color: #555; margin-top: 10px;}
+
+
+/* gotop btn */
+footer .goTop {position: absolute; color: #eee; bottom: -45px; right: -80px; width: 180px; height: 100px; background: #806D60; font-size: 18px; transform: rotate(-45deg); padding-top: 13px; display: block; text-align: center; transition: all 0.3s; }
+footer .goTop:hover {transition: all 0.3s; color: #d4c8be;}
+

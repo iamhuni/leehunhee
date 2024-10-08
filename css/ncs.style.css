@@ -1,0 +1,313 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@300;400&family=Playfair+Display:wght@400;700;900&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+
+/* layout */
+body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #2e2e2e;}
+.ko {font-family: 'Noto Sans KR', sans-serif;}
+.en {font-family: 'Playfair Display', serif; font-weight: normal;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.en_b {font-family: 'DM Serif Display', serif; font-weight: normal;}
+
+/* header ----------------------------------------------------------------------------------------------------------------------------------------- */
+header {width: 100%;  position: fixed; z-index: 100;}
+header .innerHeader {width: 97%; padding: 30px 20px; margin: 0 auto; overflow: hidden;}
+header .innerHeader h1.logo {float: left; width: 100px; }
+header .innerHeader h1.logo a {display: block; width: 100%; height: 100%;}
+header .innerHeader h1.logo img {width: 100%; }
+header .innerHeader h1.logo img img {width: 100%;}
+header .innerHeader a.menu {float: right; font-size: 26px; transition: all 0.4s; }
+header .innerHeader a.menu:hover,header .innerHeader a.menu:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s; }
+header .innerHeader a.menu::after {content: ''; width: 0%; height: 1px; background: #d4c8be; position: absolute; bottom: -5px; left: 0; transition: all 0.3s;}
+header .innerHeader a.menu:hover::after,header .innerHeader a.menu:focus::after {width: 100%; }
+
+
+/* menuOpen ----------------------------------------------------------------------------------------------------------------------------------------- */
+.menuOpen {background: #947C6B; display: block; width: 700px; position: absolute; top: 0; right: -100%; color: #eee; height: 100vh; font-size: 30px; text-align: center; padding: 30px; box-sizing: border-box; float: right;  z-index: 200; transition: all 0.8s; z-index: 99; } 
+.menuOpen a.close {display: block; font-size: 35px; color: #eee; float: right; margin-right: 20px; transition: all ease 0.3s;}
+.menuOpen a.close:hover,.menuOpen a.close:focus {transform: rotate(181deg); transition: all ease 0.3s; color: #d4c8be }
+.menuOpen ul {margin-top: 170px;}
+.menuOpen ul li a {display: inline-block; margin-bottom: 130px; transition: all 0.3s;}
+.menuOpen ul li a.sub {font-size: 20px; display: block; width: 9%; padding: 0; margin-top: -120px; margin-left: 270px;}
+.menuOpen ul li a:hover,.menuOpen ul li a:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s;}
+.menuOpen ul li a::after {content: ''; width: 0%; height: 1px; background: #d4c8be; position: absolute; bottom: -5px; left: 0; transition: all 0.3s;}
+.menuOpen ul li a:hover::after,.menuOpen ul li a:focus::after {width: 100%;}
+.menuOpen.on {right: 0; transition: all 0.8s;}
+
+/* section.visual */
+section.visual {width: 100%; overflow: hidden;}
+section.visual p.img {width: 52%; z-index: 1;}
+section.visual p.img img {width: 100%;}
+section.visual p.img::before {content: ''; width: 547px; height: 1056px; background: #EDE7E3; position: absolute; top: 0; left: 0; z-index: -1;}
+section.visual .txtBox {text-align: right; position: absolute; top: 309px;  right: 418px;}
+section.visual .txtBox .en_b {font-size: 130px;}
+section.visual .txtBox .ko {font-size: 20px;}
+section.visual .txtBox.motion span.en_b b {overflow: hidden; font-weight: normal; display: block; animation-name: textAni; animation-duration: 0.5s}
+section.visual .txtBox.motion span.ko b {overflow: hidden; font-weight: normal; display: block; animation-name: textAni; animation-duration: 0.8s}
+@keyframes textAni {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform:  translate3d(0, 40px,0) skewY(8deg);  transform-origin: top left;}
+}
+
+/* section..contetns ----------------------------------------------------------------------------------------------------- */
+section.contents {width: 100%; background: #fff; }
+section.contents .inner {width: 1470px; margin: 200px auto; overflow: hidden; }
+section.contents .inner .txtBox p.left { float: left; border-right: 1px solid #aaa; padding-right: 90px;}
+section.contents .inner .txtBox p.left.ko{font-size: 60px; padding-bottom: 50px;}
+section.contents .inner .txtBox p.left span.num {font-size: 20px; color: #ddd;}
+section.contents .inner .txtBox p.left span.en {font-size: 65px;}
+section.contents .inner .txtBox p.right.ko{float: right; text-align: right; margin-top: 50px;}
+
+/* section.content a --------------------------------------------------------------------------------------------------------------------- */
+section.content.a {width: 100%; background: #F5F1ED;}
+section.content.a .inner {width: 1470px; margin: 0 auto; overflow: hidden; }
+section.content.a .inner .txtBox { position: relative; }
+section.content.a .inner .txtBox .en_b.num {font-size: 250px; margin-right: 30px; color: #ddd; line-height: 1;  display: inline-block; }
+section.content.a .inner .txtBox ul.txt {display: inline-block; position: absolute; top: 60px; }
+section.content.a .inner .txtBox ul.txt li.ko {margin-top: 10px;}
+section.content.a .inner .txtBox ul.txt li.en {font-size: 70px; font-weight: bold; }
+section.content.a .inner .txtBox ul.txt li.en span.more {font-size: 23px; font-weight: normal; transition: all 0.3s;}
+section.content.a .inner .txtBox ul.txt li.en span.lnr-cross {margin-left: 5px; font-size: 19px; transition: all 0.3s; display: inline-block; transform: rotate(45deg);}
+section.content.a .inner .txtBox ul.txt li.en a:hover span.lnr-cross,section.content.a .inner .txtBox ul.txt li.en a:focus span.lnr-cross {transform: rotate(226deg); display: inline-block; transition: all 0.3s;color: #d4c8be }
+section.content.a .inner .txtBox ul.txt li.en span:hover,section.content.a .inner .txtBox ul.txt li.en a:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s;}
+section.content.a .inner .txtBox ul.txt li.en a:after {content: ''; width: 0%; height: 5px; background: #d4c8be; position: absolute; bottom:0px; left: 0px; transition: all 0.3s;}
+
+section.content.a .inner ul.list {position: relative; padding: 355px 0; }
+section.content.a .inner ul.list li {overflow: hidden;}
+section.content.a .inner ul.list li:nth-child(1) {position: absolute; left: 0; bottom: 0; }
+section.content.a .inner ul.list li:nth-child(1) img {transition: all 0.5s; width: 100%;}
+section.content.a .inner ul.list li:nth-child(1) img img {width: 100%;}
+section.content.a .inner ul.list li:nth-child(1):hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.a .inner ul.list li:nth-child(1) .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 250px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.a .inner ul.list li:nth-child(1) .txtBox p.txt.num {margin-top: 70px;}
+section.content.a .inner ul.list li:nth-child(1):hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.a .inner ul.list li:nth-child(1) .txtBox p.txt.num {font-size: 27px; font-weight: bold; color: #444;}
+section.content.a .inner ul.list li:nth-child(1) .txtBox p.txt.ko {font-size: 40px; font-weight: bold; color: #eee;}
+
+section.content.a .inner ul.list li:nth-child(2) {position: absolute; right: 0; top: 0;}
+section.content.a .inner ul.list li:nth-child(2) img {transition: all 0.5s; width: 600px;}
+section.content.a .inner ul.list li:nth-child(2) img img {width: 100%;}
+section.content.a .inner ul.list li:nth-child(2):hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.a .inner ul.list li:nth-child(2) .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 150px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.a .inner ul.list li:nth-child(2) .txtBox p.txt.num {margin-top: 40px;}
+section.content.a .inner ul.list li:nth-child(2):hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.a .inner ul.list li:nth-child(2) .txtBox p.txt.num {font-size: 20px; font-weight: bold; color: #444;}
+section.content.a .inner ul.list li:nth-child(2) .txtBox p.txt.ko {font-size: 30px; font-weight: bold; color: #eee;}
+
+section.content.a .inner ul.list li:nth-child(3) {position: absolute; right: 0; bottom: 0;}
+section.content.a .inner ul.list li:nth-child(3) img {transition: all 0.5s; width: 600px; }
+section.content.a .inner ul.list li:nth-child(3) img img {width: 100%;}
+section.content.a .inner ul.list li:nth-child(3):hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.a .inner ul.list li:nth-child(3) .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 150px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.a .inner ul.list li:nth-child(3) .txtBox p.txt.num {margin-top: 40px;}
+section.content.a .inner ul.list li:nth-child(3):hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.a .inner ul.list li:nth-child(3) .txtBox p.txt.num {font-size: 20px; font-weight: bold; color: #444;}
+section.content.a .inner ul.list li:nth-child(3) .txtBox p.txt.ko {font-size: 30px; font-weight: bold; color: #eee;}
+
+/* section.content b ---------------------------------------------------------------------------------------------------------------------- */
+section.content.b {width: 100%; background: #fff; }
+section.content.b .inner {width: 1470px;  margin: 0 auto; overflow: hidden;}
+section.content.b .inner .txtBox {position: relative; text-align: right;}
+section.content.b .inner .txtBox .en_b.num {font-size: 250px; color: #ddd; line-height: 1;  display: inline-block; }
+section.content.b .inner .txtBox ul.txt {display: inline-block; position: absolute; top: 60px; right: 300px;}
+section.content.b .inner .txtBox ul.txt li.ko {margin-top: 10px;}
+section.content.b .inner .txtBox ul.txt li.en {font-size: 70px; font-weight: bold; }
+section.content.b .inner .txtBox ul.txt li.en span.more {font-size: 23px; margin-right: 20px; font-weight: normal; transition: all 0.3s;}
+section.content.b .inner .txtBox ul.txt li.en span.lnr-cross {margin-left: 5px; font-size: 19px; transition: all 0.3s; display: inline-block; transform: rotate(45deg);}
+section.content.b .inner .txtBox ul.txt li.en a:hover span.lnr-cross,section.content.a .inner .txtBox ul.txt li.en a:focus span.lnr-cross {transform: rotate(226deg); display: inline-block; transition: all 0.3s;color: #d4c8be }
+section.content.b .inner .txtBox ul.txt li.en span:hover,section.content.a .inner .txtBox ul.txt li.en a:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s;}
+section.content.b .inner .txtBox ul.txt li.en a:after {content: ''; width: 0%; height: 5px; background: #d4c8be; position: absolute; bottom:0px; left: 0px; transition: all 0.3s;}
+
+section.content.b .inner ul.list {position: relative; padding: 300px 0; }
+section.content.b .inner ul.list li {overflow: hidden;}
+section.content.b .inner ul.list li:nth-child(1) {position: absolute; left: 0; bottom: 0; }
+section.content.b .inner ul.list li:nth-child(1) img {transition: all 0.5s; width: 295px; }
+section.content.b .inner ul.list li:nth-child(1):hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.b .inner ul.list li:nth-child(1) .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 100px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.b .inner ul.list li:nth-child(1) .txtBox p.txt.num {margin-top: 20px;}
+section.content.b .inner ul.list li:nth-child(1):hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.b .inner ul.list li:nth-child(1) .txtBox p.txt.num {font-size: 18px; font-weight: bold; color: #444;}
+section.content.b .inner ul.list li:nth-child(1) .txtBox p.txt.ko {font-size: 21px; font-weight: bold; color: #eee;}
+
+section.content.b .inner ul.list li:nth-child(2) {position: absolute; left: 330px; bottom: 0;}
+section.content.b .inner ul.list li:nth-child(2) img {transition: all 0.5s; width: 295px; }
+section.content.b .inner ul.list li:nth-child(2):hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.b .inner ul.list li:nth-child(2) .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 100px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.b .inner ul.list li:nth-child(2) .txtBox p.txt.num {margin-top: 20px;}
+section.content.b .inner ul.list li:nth-child(2):hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.b .inner ul.list li:nth-child(2) .txtBox p.txt.num {font-size: 18px; font-weight: bold; color: #444;}
+section.content.b .inner ul.list li:nth-child(2) .txtBox p.txt.ko {font-size: 21px; font-weight: bold; color: #eee;}
+
+section.content.b .inner ul.list li:nth-child(3) {position: absolute; right: 0; bottom: 0;}
+section.content.b .inner ul.list li:nth-child(3) img {transition: all 0.5s; }
+section.content.b .inner ul.list li:nth-child(3):hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.b .inner ul.list li:nth-child(3) .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 170px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.b .inner ul.list li:nth-child(3) .txtBox p.txt.num {margin-top: 40px;}
+section.content.b .inner ul.list li:nth-child(3):hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.b .inner ul.list li:nth-child(3) .txtBox p.txt.num {font-size: 25px; font-weight: bold; color: #444;}
+section.content.b .inner ul.list li:nth-child(3) .txtBox p.txt.ko {font-size: 35px; font-weight: bold; color: #eee;}
+
+
+/* section.content c ---------------------------------------------------------------------------------- */
+section.content.c {width: 100%; background: #F5F1ED; }
+section.content.c .inner {width: 1470px; margin: 0 auto; overflow: hidden;}
+section.content.c .inner .txtBox { position: relative; }
+section.content.c .inner .txtBox .en_b.num {font-size: 250px; margin-right: 30px; color: #ddd; line-height: 1;  display: inline-block; cursor: default; }
+section.content.c .inner .txtBox ul.txt {display: inline-block; position: absolute; top: 60px;}
+section.content.c .inner .txtBox ul.txt li.ko {margin-top: 10px;}
+section.content.c .inner p.txt.ko.a {margin-bottom: 10px;}
+section.content.c .inner p.txt.ko.b {margin: 10px 0;}
+section.content.c .inner .txtBox ul.txt li.en {font-size: 70px; font-weight: bold; }
+section.content.c .inner .box {margin: 0 135px;}
+section.content.c .inner p.txt.ko { font-size: 35px; font-weight: bold; }
+section.content.c .inner p.txt.ko.bddd {display: inline;}
+section.content.c .inner p.txt.ko span.more {font-size: 23px; margin-left: 20px; font-weight: normal; transition: all 0.3s;}
+section.content.c .inner p.txt.ko span.lnr-cross {margin-left: 5px; font-size: 19px; transition: all 0.3s; display: inline-block; transform: rotate(45deg);}
+section.content.c .inner p.txt.ko a {width: 100%; height: 100%; display: bl;}
+section.content.c .inner p.txt.ko a:hover span.lnr-cross,section.content.c .inner p.txt.ko a:focus span.lnr-cross {transform: rotate(226deg); display: inline-block; transition: all 0.3s;color: #d4c8be }
+section.content.c .inner p.txt.ko span:hover,section.content.c .inner p.txt.ko span:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s;}
+section.content.c .inner p.txt.ko a:after {content: ''; width: 0%; height: 5px; background: #d4c8be; position: absolute; bottom:0px; left: 0px; transition: all 0.3s;}
+section.content.c .inner ul {overflow: hidden;}
+section.content.c .inner ul li {float: left; margin-right: 70px; overflow: hidden; position: relative;}
+section.content.c .inner ul li:last-child {margin-right: 0px;}
+section.content.c .inner ul li img {width: 560px;}
+section.content.c .inner ul li.list.a {float: left;} 
+section.content.c .inner ul li.list.b {float: left; margin-top: 10px;}
+section.content.c .inner ul li.img1 img {transition: all 0.5s; }
+section.content.c .inner ul li.img1:hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.c .inner ul li.img1 .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 140px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.c .inner ul li.img1 .txtBox p.txt.num {margin-top: 35px;}
+section.content.c .inner ul li.img1:hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.c .inner ul li.img1 .txtBox p.txt.num {font-size: 18px; font-weight: bold; color: #555;}
+section.content.c .inner ul li.img1 .txtBox p.txt.ko {font-size: 30px; font-weight: bold; color: #444;}
+section.content.c .inner ul li.img2 img {transition: all 0.5s; }
+section.content.c .inner ul li.img2:hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.c .inner ul li.img2 .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 140px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.c .inner ul li.img2 .txtBox p.txt.num {margin-top: 35px;}
+section.content.c .inner ul li.img2:hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.c .inner ul li.img2 .txtBox p.txt.num {font-size: 18px; font-weight: bold; color: #555;}
+section.content.c .inner ul li.img2 .txtBox p.txt.ko {font-size: 30px; font-weight: bold; color: #444;}
+
+
+/* section.content d ---------------------------------------------------------------------------------------------------------------------- */
+section.content.d {width: 100%; background: #fff;}
+section.content.d .inner {width: 1470px;  margin: 0 auto; overflow: hidden; position: relative;}
+section.content.d .inner .txtBox {position: relative; text-align: right; }
+section.content.d .inner .txtBox .en_b.num {font-size: 250px; color: #ddd; line-height: 1;  display: inline-block; }
+section.content.d .inner .txtBox ul.txt {display: inline-block; position: absolute; top: 60px; right: 300px;}
+section.content.d .inner .txtBox ul.txt li.ko {margin-top: 10px;}
+section.content.d .inner .txtBox ul.txt li.en {font-size: 70px; font-weight: bold; }
+section.content.d .inner .txtBox ul.txt li.en span.more {font-size: 23px; margin-right: 20px; font-weight: normal; transition: all 0.3s;}
+section.content.d .inner .txtBox ul.txt li.en span.lnr-cross {margin-left: 5px; font-size: 19px; transition: all 0.3s; display: inline-block; transform: rotate(45deg);}
+section.content.d .inner .txtBox ul.txt li.en a:hover span.lnr-cross,section.content.a .inner .txtBox ul.txt li.en a:focus span.lnr-cross {transform: rotate(226deg); display: inline-block; transition: all 0.3s;color: #d4c8be }
+section.content.d .inner .txtBox ul.txt li.en span:hover,section.content.a .inner .txtBox ul.txt li.en a:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s;}
+section.content.d .inner .txtBox ul.txt li.en a:after {content: ''; width: 0%; height: 5px; background: #d4c8be; position: absolute; bottom:0px; left: 0px; transition: all 0.3s;}
+
+section.content.d .inner ul.list {position: relative; padding: 350px 0; }
+section.content.d .inner ul.list li {overflow: hidden;}
+section.content.d .inner ul.list li:nth-child(1) {position: absolute; left: 0; bottom: 0; }
+section.content.d .inner ul.list li:nth-child(1) img {transition: all 0.5s;  }
+section.content.d .inner ul.list li:nth-child(1):hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.d .inner ul.list li:nth-child(1) .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 200px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.d .inner ul.list li:nth-child(1) .txtBox p.txt.num {margin-top: 60px;}
+section.content.d .inner ul.list li:nth-child(1):hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.d .inner ul.list li:nth-child(1) .txtBox p.txt.num {font-size: 20px; font-weight: bold; color: #444;}
+section.content.d .inner ul.list li:nth-child(1) .txtBox p.txt.ko {font-size: 30px; font-weight: bold; color: #333;}
+
+section.content.d .inner ul.list li:nth-child(2) {position: absolute; right: 0px; bottom: 0;}
+section.content.d .inner ul.list li:nth-child(2) img {transition: all 0.5s;  }
+section.content.d .inner ul.list li:nth-child(2):hover img { transition: all 0.5s; transform: scale(1.1); opacity: 0.9;}
+section.content.d .inner ul.list li:nth-child(2) .txtBox {background: rgba(204, 153, 102, 0.5); position: absolute; bottom: 0; height: 200px;  width: 100%; text-align: center; transition: all 0.3s; opacity: 0; cursor: default;}
+section.content.d .inner ul.list li:nth-child(2) .txtBox p.txt.num {margin-top: 60px;}
+section.content.d .inner ul.list li:nth-child(2):hover .txtBox {opacity: 1; transition: all 0.5s;}
+section.content.d .inner ul.list li:nth-child(2) .txtBox p.txt.num {font-size: 20px; font-weight: bold; color: #444;}
+section.content.d .inner ul.list li:nth-child(2) .txtBox p.txt.ko {font-size: 30px; font-weight: bold; color: #333;}
+
+/* pdfList */
+section.content.d .inner ul.pdfList { display: inline-block; font-size: 20px;  position: absolute; top: 270px; right: 20px; z-index: 99;}
+section.content.d .inner ul.pdfList li {line-height: 2.2;}
+section.content.d .inner ul.pdfList li a {transition: all 0.3s;}
+section.content.d .inner ul.pdfList li a span {margin-left: 10px; font-size: 18px; transition: all 0.3s; display: inline-block; transform: rotate(45deg);}
+section.content.d .inner ul.pdfList li a:hover span,section.content.d .inner ul.pdfList li a:focus span {transform: rotate(226deg); display: inline-block; transition: all ease 0.3s; color: #d4c8be }
+section.content.d .inner ul.pdfList li a:hover,section.content.d .inner ul.pdfList li a:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s;}
+
+
+/* footer ------------------------------------------------------------------------------------ */
+/* contact */
+footer {width: 100%; overflow: hidden; }
+footer .contact {width: 50%; float: left; background: #B09582; overflow: hidden; position: relative; height: 962px;}
+footer .contact .left {width: 478px; margin: 0 auto; }
+footer .contact .left p.en {color: #eee; font-size: 20px; letter-spacing: 1px; text-align: center; margin-top: 150px; z-index: 1;}
+footer .contact .left .mail {margin-top: 150px;}
+footer .contact .left .mail p.img {display: block; margin: 0 20%; transform: rotate(8deg); transition: all 0.2s; z-index: -1;} 
+footer .contact .left .mail p.en.mail {font-size: 50px; font-weight: normal; position: absolute; bottom: 43%;}
+
+footer .contact .left .mail p.en.mail::after {content: ''; width: 0%; height: 1px; background: #eee; position: absolute; bottom:-5px; left: 0px; transition: all 0.2s;}
+
+footer .contact .left .mail p.en.mail:hover::after {width: 100%; transition: all 0.2s; }
+footer .contact .left .mail a:hover + p.img{transform: rotate(0deg); transition: all 0.2s;}
+footer .contact .left .mail p.img.motion {animation-name: pop-up; animation-duration: 0.8s;}
+@keyframes pop-up {
+  0%{transform: scale(0.5); opacity: 0;}
+  30%{transform: scale(1.2); opacity: 1;}
+}
+
+
+/* footer ------------------------------------------------------------------------------------ */
+/* contact */
+footer {width: 100%; overflow: hidden; }
+footer .contact {width: 50%; height: 100%; float: left; background: #B09582; overflow: hidden; position: relative;}
+footer .contact .left {width: 478px; margin: 0 auto; }
+footer .contact .left p.en {color: #eee; font-size: 20px; letter-spacing: 1px; text-align: center; margin-top: 150px; z-index: 1;}
+footer .contact .left .mail {margin-top: 150px;}
+footer .contact .left .mail p.img {display: block; margin: 0 20%; transform: rotate(8deg); transition: all 0.2s; z-index: -1;} 
+footer .contact .left .mail p.en.mail {font-size: 50px; font-weight: normal; position: absolute; bottom: 48%;}
+footer .contact .left .mail p.en.mail::after {content: ''; width: 0%; height: 1px; background: #eee; position: absolute; bottom:-5px; left: 0px; transition: all 0.2s;}
+footer .contact .left .mail p.en.mail:hover::after {width: 100%; transition: all 0.2s; }
+footer .contact .left .mail a:hover + p.img{transform: rotate(0deg); transition: all 0.2s;}
+footer .contact .left .mail p.img.motion {animation-name: pop-up; animation-duration: 0.8s;}
+@keyframes pop-up {
+  0%{transform: scale(0.5); opacity: 0;}
+  30%{transform: scale(1.2); opacity: 1;}
+}
+
+/* info ------------------------------------------------------------------------------------ */
+footer .info  {width: 50%; float: right; background: #EDE7E3; height: 100%; }
+footer .info .right {width: 100%; }
+footer .info .right .txtBox {width: 689px; margin: 0 auto; border-bottom: 1px solid #2e2e2e; padding-bottom: 50px;}
+footer .info .right h1.logo {width: 100px; margin-top: 176px; margin-bottom: 100px;}
+footer .info .right h1.logo a {display: block; width: 100%; height: 100%;}
+footer .info .right h1.logo img {width: 100%;}
+footer .info .right h1.logo img img {width: 100%;}
+footer .info .right p.ko {font-size: 25px; margin-bottom: 35px;}
+footer .info .right p.ko span.en {font-size: 18px;}
+footer .info .right p.tel {margin-bottom: 40px; font-size: 18px;}
+footer .info .right .txtBox .btn.en {font-size: 30px; text-align: right;}
+footer .info .right .txtBox .btn.en a {display: inline-block; transition: all 0.3s; }
+footer .info .right .txtBox .btn.en span {margin-left: 5px; font-size: 26px; transition: all 0.3s; display: inline-block; transform: rotate(45deg);}
+footer .info .right .txtBox .btn.en a:hover span,footer .info .right .txtBox .btn.en a:focus span {transform: rotate(226deg); display: inline-block; transition: all ease 0.3s; color: #777 }
+footer .info .right .txtBox .btn.en a:hover,footer .info .right .txtBox .btn.en a:focus {transform: translateX(0px); color: #777; transition: all 0.3s;}
+footer .info .right .txtBox .btn.en a::after {content: ''; width: 0%; height: 1px; background: #777; position: absolute; bottom:0px; left: 0px; transition: all 0.3s;}
+footer .info .right .txtBox .btn.en a:hover::after,footer .info .right .txtBox .btn.en a:focus::after {width: 100%; transition: all 0.3s;}
+
+footer .info .right p.copy {font-size: 18px; margin-top: 200px; text-align: center;}
+footer .info .right p.txt {font-size: 14px; text-align: center; color: #555; margin-top: 10px;}
+
+
+#fp-nav ul {position: absolute; top: -200px; right: 20px; }
+#fp-nav ul li a {background: #d4c8be; color: #947C6B; margin-top: 27px; border-radius: 50%;}
+#fp-nav ul li a.active {background-color: #947C6B; }
+#fp-nav ul li a span {background: transparent; background-color: #B09582;}
+

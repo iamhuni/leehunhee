@@ -1,0 +1,207 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@300;400&family=Playfair+Display:wght@400;700;900&display=swap');
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* layout */
+body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #2e2e2e;}
+.en {font-family: 'Playfair Display', serif;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.en_b {font-family: 'DM Serif Display', serif; font-weight: normal;}
+
+/* header -------------------------------------------------------------------------- */
+header {width: 100%;  position: fixed; z-index: 100;}
+header .innerHeader {max-width: 1800px; padding: 30px 20px; margin: 0 auto; overflow: hidden;}
+header .innerHeader h1.logo {float: left; width: 100px; }
+header .innerHeader h1.logo a {display: block; width: 100%; height: 100%;}
+header .innerHeader h1.logo img {width: 100%; }
+header .innerHeader h1.logo img img {width: 100%;}
+header .innerHeader a.menu {float: right; font-size: 26px; transition: all 0.4s;}
+header .innerHeader a.menu:hover,header .innerHeader a.menu:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s; }
+header .innerHeader a.menu::after {content: ''; width: 0%; height: 1px; background: #d4c8be; position: absolute; bottom: -5px; left: 0; transition: all 0.3s;}
+header .innerHeader a.menu:hover::after,header .innerHeader a.menu:focus::after {width: 100%; }
+
+
+/* menuOpen ------------------------------------------------------------------------------------ */
+.menuOpen {background: #947C6B; display: block; width: 700px; position: absolute; top: 0; right: -100%; color: #eee; height: 100vh; font-size: 30px; text-align: center; padding: 30px; box-sizing: border-box; float: right;  z-index: 200; transition: all 0.8s;} 
+.menuOpen a.close {display: block; font-size: 35px; color: #eee; float: right; margin-right: 20px; transition: all ease 0.3s;}
+.menuOpen a.close:hover,.menuOpen a.close:focus {transform: rotate(181deg); transition: all ease 0.3s; color: #d4c8be }
+.menuOpen ul {margin-top: 170px;}
+.menuOpen ul li a {display: inline-block; margin-bottom: 130px; transition: all 0.3s;}
+.menuOpen ul li a.sub {font-size: 20px; display: block; width: 9%; padding: 0; margin-top: -120px; margin-left: 270px;}
+.menuOpen ul li a:hover,.menuOpen ul li a:focus {transform: translateX(0px); color: #d4c8be; transition: all 0.3s;}
+.menuOpen ul li a::after {content: ''; width: 0%; height: 1px; background: #d4c8be; position: absolute; bottom: -5px; left: 0; transition: all 0.3s;}
+.menuOpen ul li a:hover::after,.menuOpen ul li a:focus::after {width: 100%;}
+.menuOpen.on {right: 0; transition: all 0.8s;}
+
+
+/* section.visual ------------------------------------------------------------------------------------ */
+section.visual {width: 100%; overflow: hidden; position: relative;}
+section.visual span.bg {background: #B09582; width: 547px; height: 1074px; float: right;}
+section.visual p.img { position: absolute; right: 0px; top: 200px;}
+section.visual .txtBox { display: inline-block; position: absolute; top: 280px; left: 635px;}
+section.visual .txtBox .en_b {font-size: 130px;}
+section.visual .txtBox .en {font-size: 25px;}
+section.visual .txtBox.motion .en_b {animation-name: textAni; animation-duration: 0.6s; font-weight: normal;}
+section.visual .txtBox.motion .en {animation-name: textAni; animation-duration: 0.9s; font-weight: normal;}
+@keyframes textAni {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform:  translate3d(0, 40px,0) skewY(8deg);  transform-origin: top left;}
+}
+section.visual p.img.motion {animation-name: img; animation-duration: 1s;}
+@keyframes img {
+  0%{transform: translateX(200px); opacity: 0;}
+  30%{transform: translateX(200px); opacity: 0;}
+}
+
+
+/* section.gallery ------------------------------------------------------------------------------------ */
+section.gallery {width: 100%; overflow: hidden; position: relative;}
+section.gallery .coding {width: 1525px; background: #fff; margin: 180px auto; height: 3398px;}
+section.gallery .coding .txtBox {text-align: center; line-height: 1.6; margin-bottom: 125px;}
+section.gallery .coding .txtBox .en_b {font-size: 100px;}
+section.gallery .coding .txtBox .ko {font-size: 16px;}
+section.gallery .coding .txtBox.motion .en_b.splitting .char {display: inline-block; animation: slide-down 0.6s cubic-bezier(.6, 0, .5, 1) both; animation-delay: calc(30ms * var(--char-index));}
+section.gallery .coding .txtBox.motion .ko.splitting .char {display: inline-block; animation: slide-down 0.4s cubic-bezier(.5, 0, .5, 1) both; animation-delay: calc(8ms * var(--char-index));}
+@keyframes slide-down {
+0% {transform: translateY(-90px); opacity: 0;}
+30% {transform: translateY(-90px); opacity: 0;}
+}
+
+.line {fill: none; stroke: #2e2e2e; width: 2px; position: absolute; left: 50%;}
+.line.motion .st0 {stroke-dasharray: 5000; stroke-dashoffset: 5000; animation: dash 3s linear forwards; }
+@keyframes dash {
+  form {stroke-dashoffset: 5000; }
+  to {stroke-dashoffset: 0;}
+} 
+
+section.gallery .coding ul {float: left; margin-top: 230px;}
+section.gallery .coding ul li {float: left; margin-right: 50px; overflow: hidden;  position: relative; }
+section.gallery .coding ul li:last-child {margin-right: 0px;}
+section.gallery .coding ul > li {margin-bottom: 200px;}
+section.gallery .coding ul li:nth-child(1),section.gallery .coding ul li:nth-child(3) {margin-top: 280px;}
+
+section.gallery .coding ul li a p.img {transform: scale(1.15); transition: all 0.3s; filter: grayscale(1);}
+section.gallery .coding ul li a p.img:hover {transform: scale(1); filter: grayscale(0); }
+section.gallery .coding ul li a p.img:hover {transform: scale(1); filter: grayscale(0); }
+
+section.gallery .coding ul li .txt {font-size: 50px; font-weight: bold; display: inline-block; text-align: center; color: #eee; position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); transition: all 0.3s; opacity: 0;}
+/* ainimation */
+section.gallery .coding ul li:hover .txt {animation-name: sild-up; animation-duration: 0.3s; opacity: 1; }
+@keyframes sild-up {
+  0% {opacity: 0;  }
+  30% {opacity: 0; }
+}
+section.gallery .coding ul.a li:nth-child(2) .txt {color: #2e2e2e;}
+section.gallery .coding ul.a li:nth-child(3) .txt {color: #aaa;}
+section.gallery .coding ul.a li:nth-child(3) .txt {color: #aaa;}
+section.gallery .coding ul.b li:nth-child(1) .txt {color: #eee;}
+
+section.gallery .coding ul.motion li:nth-child(1) {animation-name: slide; animation-duration: 1s;}
+section.gallery .coding ul.motion li:nth-child(2) {animation-name: slide; animation-duration: 0.7s;}
+section.gallery .coding ul.motion li:nth-child(3) {animation-name: slide; animation-duration: 1.5s;}
+@keyframes slide {
+  0% {opacity: 0; transform: translateY(0px);}
+  10% {opacity: 0; transform: translateY(-200px);}
+
+}
+
+
+/* gallery design----------------------------------------------------------------------------------------------------------------- */
+section.gallery .design {position: relative; z-index: 9; width: 100%; background: #F5F1ED; padding: 150px 0 400px;}
+section.gallery .design .txtBox {text-align: center; margin-bottom: 170px;}
+section.gallery .design .txtBox .en_b {font-size: 100px; font-weight: normal;}
+section.gallery .design .txtBox .ko {font-size: 16px; font-weight: normal;}
+section.gallery .design .txtBox.motion .en_b.splitting .char {display: inline-block; animation: slide-down 0.6s cubic-bezier(.6, 0, .5, 1) both; animation-delay: calc(30ms * var(--char-index));}
+section.gallery .design .txtBox.motion .ko.splitting .char {display: inline-block; animation: slide-down 0.6s cubic-bezier(.6, 0, .5, 1) both; animation-delay: calc(9ms * var(--char-index));}
+
+section.gallery .design ul {float: left;}
+section.gallery .design ul li {float: left;}
+/* slide slick부분--------------------------------------- */
+.slideBox {display: flex; }
+.slideBox .slide {width: 500px; height: 400px; margin: 80px; position: relative; }
+.slideBox .slide img {width: 500px; height: 400px; transition: all linear .4s ;}
+.slick-center img {transform: scale(1.2); }
+.slideBox .slide::before {content: ''; position: absolute; top: 0; left: 0; width: 500px; height: 400px; background: rgba(0, 0, 0, 0.3); transition: all linear .4s;}
+.slideBox .slide img:before {transition: all linear .4s;}
+
+.slick-arrow {position: absolute; right: 0%; bottom: 0%;  width: 50px; height: 50px; line-height: 50px; background: #ddd; z-index: 20; border: none; text-indent: -9999px; border-radius: 50%; transition: all 0.2s; cursor: pointer;}
+.slick-arrow::after {content: '<'; position: absolute; left: 0; top: 0; width: 100%; height: 100%; color: #2e2e2e; font-size: 30px; text-indent: 0; font-weight: 300; font-family: 'DM Serif Display', serif; }
+.slick-arrow.slick-prev {position: absolute; left: 31.5%; bottom: 50%;  }
+.slick-arrow.slick-next {position: absolute; right: 30%; bottom: 50%; }
+.slick-arrow.slick-next::after {content: '>';}
+.slick-arrow:hover {background: #aaa;  transition: all 0.2s;}
+section.gallery .slide .txt { position: absolute; font-size: 40px; opacity: 0; transition: all 0.3s; color: #ddd; }
+section.gallery .slide .txt.en {position: absolute; top: 0; left: 0; font-weight: bold;}
+section.gallery .slide .txt.ko {font-size: 18px; position: absolute; top: 67px; left: 0px; }
+section.gallery .slick-center:hover .txt {opacity: 1; transition: all 0.3s;}
+section.gallery .slide.b .txt {color: #222;}
+section.gallery .slide.c .txt {color: #222;}
+section.gallery .slide.d .txt {color: #222;}
+section.gallery .slide.e .txt {color: #222;}
+
+section.gallery .motion .slide {animation-name: slide-l; animation-duration: 0.8s;}
+section.gallery .motion .slick-arrow {animation-name: slide-l; animation-duration: 0.8s;}
+@keyframes slide-l {
+  0% {transform: translateX(-100px); opacity: 0;}
+  10% {transform: translateX(-100px);  opacity: 1;}
+}
+
+/* footer ------------------------------------------------------------------------------------ */
+/* contact */
+footer {width: 100%; overflow: hidden; }
+footer .contact {width: 50%; float: left; background: #B09582; overflow: hidden; position: relative; height: 962px;}
+footer .contact .left {width: 478px; margin: 0 auto; }
+footer .contact .left p.en {color: #eee; font-size: 20px; letter-spacing: 1px; text-align: center; margin-top: 150px; z-index: 1;}
+footer .contact .left .mail {margin-top: 150px;}
+footer .contact .left .mail p.img {display: block; margin: 0 20%; transform: rotate(8deg); transition: all 0.2s; z-index: -1;} 
+footer .contact .left .mail p.en.mail {font-size: 50px; font-weight: normal; position: absolute; bottom: 43%;}
+
+footer .contact .left .mail p.en.mail::after {content: ''; width: 0%; height: 1px; background: #eee; position: absolute; bottom:-5px; left: 0px; transition: all 0.2s;}
+
+footer .contact .left .mail p.en.mail:hover::after {width: 100%; transition: all 0.2s; }
+footer .contact .left .mail a:hover + p.img{transform: rotate(0deg); transition: all 0.2s;}
+footer .contact .left .mail p.img.motion {animation-name: pop-up; animation-duration: 0.8s;}
+@keyframes pop-up {
+  0%{transform: scale(0.5); opacity: 0;}
+  30%{transform: scale(1.2); opacity: 1;}
+}
+
+
+/* info ------------------------------------------------------------------------------------ */
+footer .info  {width: 50%; float: right; background: #EDE7E3; height: 962px; }
+footer .info .right {width: 100%; }
+footer .info .right .txtBox {width: 689px; margin: 0 auto; border-bottom: 1px solid #2e2e2e; padding-bottom: 50px;}
+
+footer .info .right h1.logo {width: 100px; margin-top: 176px; margin-bottom: 100px;}
+footer .info .right h1.logo a {display: block; width: 100%; height: 100%;}
+footer .info .right h1.logo img {width: 100%;}
+footer .info .right h1.logo img img {width: 100%;}
+
+footer .info .right p.ko {font-size: 25px; margin-bottom: 35px;}
+footer .info .right p.ko span.en {font-size: 18px;}
+footer .info .right p.tel {margin-bottom: 40px; font-size: 18px;}
+
+footer .info .right .txtBox .btn.en {font-size: 30px; text-align: right;}
+footer .info .right .txtBox .btn.en a {display: inline-block; transition: all 0.3s; }
+footer .info .right .txtBox .btn.en span {margin-left: 5px; font-size: 26px; transition: all 0.3s; display: inline-block; transform: rotate(45deg);}
+footer .info .right .txtBox .btn.en a:hover span,footer .info .right .txtBox .btn.en a:focus span {transform: rotate(226deg); display: inline-block; transition: all ease 0.3s; color: #777 }
+footer .info .right .txtBox .btn.en a:hover,footer .info .right .txtBox .btn.en a:focus {transform: translateX(0px); color: #777; transition: all 0.3s;}
+footer .info .right .txtBox .btn.en a::after {content: ''; width: 0%; height: 1px; background: #777; position: absolute; bottom:0px; left: 0px; transition: all 0.3s;}
+footer .info .right .txtBox .btn.en a:hover::after,footer .info .right .txtBox .btn.en a:focus::after {width: 100%; transition: all 0.3s;}
+
+footer .info .right p.copy {font-size: 18px; margin-top: 200px; text-align: center;}
+footer .info .right p.txt {font-size: 14px; text-align: center; color: #555; margin-top: 10px;}
+
+/* gotop btn */
+footer .goTop {position: absolute; color: #eee; bottom: -45px; right: -80px; width: 180px; height: 100px; background: #806D60; font-size: 18px; transform: rotate(-45deg); padding-top: 13px; display: block; text-align: center; transition: all 0.3s; }
+footer .goTop:hover {transition: all 0.3s; color: #d4c8be;}
